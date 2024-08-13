@@ -2,12 +2,15 @@ import { NextRequest, NextResponse } from 'next/server';
 
 async function handleRequest(req: NextRequest, method: string) {
   const { searchParams } = new URL(req.url);
-  const path = searchParams.get('path');
-  const url = `${process.env.NEXT_PUBLIC_API_URL}${path}`;
+  const path = searchParams.get('path') || '';
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL || '';
+  const url = new URL(path, apiUrl).toString();
+
+  console.log(`Attempting to proxy ${method} request to: ${url}`);
 
   try {
     const headers = new Headers(req.headers);
-    headers.set('host', new URL(process.env.NEXT_PUBLIC_API_URL!).host);
+    headers.delete('host'); // Remove the original host header
 
     if (method === 'PATCH' || method === 'POST') {
       headers.set('Content-Type', 'application/json');
@@ -23,14 +26,13 @@ async function handleRequest(req: NextRequest, method: string) {
     }
 
     const response = await fetch(url, requestOptions);
+    console.log(`Response status: ${response.status}`);
 
-    // Check if the response is JSON
     const contentType = response.headers.get('content-type');
     if (contentType && contentType.indexOf('application/json') !== -1) {
       const data = await response.json();
       return NextResponse.json(data, { status: response.status });
     } else {
-      // For non-JSON responses (like 204 No Content)
       if (response.status === 204) {
         return new NextResponse(null, { status: 204 });
       } else {
@@ -38,9 +40,9 @@ async function handleRequest(req: NextRequest, method: string) {
         return new NextResponse(text, { status: response.status });
       }
     }
-  } catch (error) {
+  } catch (error: any) {
     console.error(`Error proxying ${method} request:`, error);
-    return NextResponse.json({ error: `Error proxying ${method} request` }, { status: 500 });
+    return NextResponse.json({ error: `Error proxying ${method} request: ${error.message}` }, { status: 500 });
   }
 }
 
