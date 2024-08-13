@@ -3,10 +3,10 @@ const isProd = process.env.NODE_ENV === 'production';
 
 let internalHost = null;
 
-if (!isProd) {
-    const {internalIpV4} = await import('internal-ip');
-    internalHost = await internalIpV4();
-}
+// if (!isProd) {
+//     const {internalIpV4} = await import('internal-ip');
+//     internalHost = await internalIpV4();
+// }
 
 const nextConfig = {
     // Ensure Next.js uses SSG instead of SSR
