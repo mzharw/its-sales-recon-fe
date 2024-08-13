@@ -5,8 +5,6 @@ async function handleRequest(req: NextRequest, method: string) {
   const path = searchParams.get('path');
   const url = `${process.env.NEXT_PUBLIC_API_URL}${path}`;
 
-  console.log(url);
-
   try {
     const headers = new Headers(req.headers);
     headers.set('host', new URL(process.env.NEXT_PUBLIC_API_URL!).host);
