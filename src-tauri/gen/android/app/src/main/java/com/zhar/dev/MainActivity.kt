@@ -1,3 +1,3 @@
-package com.tauri.dev
+package com.zhar.dev
 
 class MainActivity : TauriActivity()

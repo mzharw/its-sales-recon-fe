@@ -1,7 +1,7 @@
 {
   "productName": "mst-sales-recon-fe",
   "version": "0.1.0",
-  "identifier": "com.tauri.dev",
+  "identifier": "com.zhar.dev",
   "build": {
     "frontendDist": "../out",
     "devUrl": "http://localhost:3000",
