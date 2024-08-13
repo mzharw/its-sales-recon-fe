@@ -1,0 +1,74 @@
+import { Header } from '@/components/Table';
+import { toPascalCase } from '@/utils/string';
+import { Table } from '@mantine/core';
+
+// export function generateHeadersAlt<T extends object>(sampleObject: T): Header[] {
+//     return Object.keys(sampleObject).map((key) => ({
+//         key,
+//         title: toPascalCase(key),
+//         sortable: true,
+//     }));
+// }
+
+
+// export function generateHeaders<T extends object>(sampleObject: T): { [K in keyof T]: Header } {
+//     const headers = {} as { [K in keyof T]: Header };
+//
+//     Object.keys(sampleObject).forEach((key) => {
+//         headers[key as keyof T] = {
+//             key,
+//             title: toPascalCase(key).replace('_', ' '),
+//             sortable: true,
+//         };
+//     });
+//
+//     return headers;
+// }
+
+export function generateHeaders(...keys: string[]): { [key: string]: Header } {
+  const headers = {} as { [key: string]: Header };
+
+  keys.forEach((key) => {
+    headers[key] = {
+      key,
+      title: toPascalCase(key).replace('_', ' '),
+      sortable: true,
+    };
+  });
+
+  return headers;
+}
+
+
+export function generateTds(count: number) {
+  let tds = [];
+  for (let i = 0; i < count; i++) {
+    tds.push(<Table.Td key={i}></Table.Td>);
+  }
+  return tds;
+}
+
+export function serializeData(data: string): string {
+  if (isDateString(data)) {
+    const date = new Date(data);
+    return date.toLocaleDateString();
+  } else {
+    return data;
+  }
+}
+
+function isDateString(data: string): boolean {
+  // Regex pattern to match ISO 8601 format
+  const isoDatePattern = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z$/;
+
+  if (isoDatePattern.test(data)) {
+    const date = new Date(data);
+    return isDateValid(date);
+  }
+
+  return false;
+}
+
+function isDateValid(date: Date): boolean {
+  return !isNaN(date.getTime());
+}

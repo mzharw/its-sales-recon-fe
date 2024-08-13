@@ -10,3 +10,9 @@
         text-wrap: balance;
     }
 }
+
+.mantine-Table-table	{
+    .mantine-Input-wrapper {
+        width: max-content;
+    }
+}

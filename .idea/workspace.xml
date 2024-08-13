@@ -1,48 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="c492e92c-c0fb-44a6-af47-a908f038d138" name="Changes" comment="">
+    <list default="true" id="21fc5f24-a157-40d5-b02d-81bbd4d9e091" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/api/proxy/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/barang/components/BarangList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/barang/components/BarangModal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/barang/contexts/BarangContext.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/barang/services/fetch.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/customer/components/CustomerList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/customer/components/CustomerModal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/customer/contexts/CustomerContext.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/customer/services/fetch.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/dashboard/Dashboard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/transaksi/components/TransaksiList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/transaksi/components/modals/TransaksiBarangModal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/transaksi/components/modals/TransaksiModal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/transaksi/contexts/TransaksiContext.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/transaksi/services/fetch.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/StyledOverlay.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Table.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/buttons/AddButton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/buttons/SubmitButtonWithLoader.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/tables/EmptyTable.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/constants/messages.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/form.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/modals.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/notifications.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/string.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/table.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bun.lockb" beforeDir="false" afterPath="$PROJECT_DIR$/bun.lockb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postcss.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/postcss.config.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-tauri/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-tauri/Cargo.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-tauri/build.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-tauri/capabilities/default.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-tauri/icons/128x128.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-tauri/icons/128x128@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-tauri/icons/32x32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-tauri/icons/Square107x107Logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-tauri/icons/Square142x142Logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-tauri/icons/Square150x150Logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-tauri/icons/Square284x284Logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-tauri/icons/Square30x30Logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-tauri/icons/Square310x310Logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-tauri/icons/Square44x44Logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-tauri/icons/Square71x71Logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-tauri/icons/Square89x89Logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-tauri/icons/StoreLogo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-tauri/icons/icon.icns" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-tauri/icons/icon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-tauri/icons/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-tauri/src/lib.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-tauri/src/main.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-tauri/tauri.conf.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src-tauri/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/src-tauri/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/barang/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/barang/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/customer/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/customer/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/template.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/transaksi/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/transaksi/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
-  <component name="ProjectId" id="2k3uhGV1ET9mArIYiGJEDyebiFo" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2kIIBUQLi6AH0TKmSnjfYVYjKfV" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -53,19 +75,33 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "javascript.nodejs.core.library.configured.version": "22.4.0",
-    "javascript.nodejs.core.library.typings.version": "22.0.2",
-    "last_opened_file_path": "//wsl.localhost/Ubuntu/home/zhar/project/interview/mst-sales-recon-fe",
+    "javascript.nodejs.core.library.typings.version": "22.1.0",
+    "last_opened_file_path": "//wsl.localhost/Ubuntu/home/zhar/project/interview/mst-sales-recon-fe/src/app/transaksi/components",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_interpreter_path": "wsl://Ubuntu@/home/zhar/.nvm/versions/node/v22.4.0/bin/node",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.nodejs",
+    "nodejs_package_manager_path": "\\home\\zhar\\.nvm\\versions\\node\\v22.4.0\\bin\\npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "\\\\wsl.localhost\\Ubuntu\\home\\zhar\\project\\interview\\mst-sales-recon-fe\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="\\wsl.localhost\Ubuntu\home\zhar\project\interview\mst-sales-recon-fe\src\app\transaksi\components" />
+      <recent name="\\wsl.localhost\Ubuntu\home\zhar\project\interview\mst-sales-recon-fe\src\app\transaksi" />
+      <recent name="\\wsl.localhost\Ubuntu\home\zhar\project\interview\mst-sales-recon-fe\src\app\barang" />
+      <recent name="\\wsl.localhost\Ubuntu\home\zhar\project\interview\mst-sales-recon-fe\src\pages\customer" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="\\wsl.localhost\Ubuntu\home\zhar\project\interview\mst-sales-recon-fe\src\app\dashboard" />
+      <recent name="\\wsl.localhost\Ubuntu\home\zhar\project\interview\mst-sales-recon-fe\src\app\transaksi\components\modals" />
+      <recent name="\\wsl.localhost\Ubuntu\home\zhar\project\interview\mst-sales-recon-fe\src\app\customer\services" />
+      <recent name="\\wsl.localhost\Ubuntu\home\zhar\project\interview\mst-sales-recon-fe\src\app\customer\contexts" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -76,12 +112,16 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c492e92c-c0fb-44a6-af47-a908f038d138" name="Changes" comment="" />
-      <created>1722524699024</created>
+      <changelist id="21fc5f24-a157-40d5-b02d-81bbd4d9e091" name="Changes" comment="" />
+      <created>1722964529100</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1722524699024</updated>
-      <workItem from="1722524700197" duration="359000" />
+      <updated>1722964529100</updated>
+      <workItem from="1722964530369" duration="4079000" />
+      <workItem from="1723001958185" duration="75857000" />
+      <workItem from="1723108856888" duration="13998000" />
+      <workItem from="1723171551873" duration="387000" />
+      <workItem from="1723184075843" duration="16608000" />
     </task>
     <servers />
   </component>

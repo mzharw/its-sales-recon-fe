@@ -1,9 +1,11 @@
 'use client';
-import {AppShell, Burger} from "@mantine/core";
-import {useDisclosure} from "@mantine/hooks";
-import Navbar from "@/app/components/Navbar";
 
-export default function Template({children,}: Readonly<{ children: React.ReactNode; }>) {
+import {AppShell, Burger} from "@mantine/core";
+import Navbar from "@/components/Navbar";
+import {useDisclosure} from "@mantine/hooks";
+import {ReactNode} from "react";
+
+export default function Layout({children}: Readonly<{ children: ReactNode; }>) {
     const [opened, {toggle}] = useDisclosure();
 
     return (
@@ -33,7 +35,7 @@ export default function Template({children,}: Readonly<{ children: React.ReactNo
                 <Navbar/>
             </AppShell.Navbar>
 
-            <AppShell.Main>{children}</AppShell.Main>
+            <AppShell.Main className={'h-screen'}>{children}</AppShell.Main>
         </AppShell>
     );
 }
