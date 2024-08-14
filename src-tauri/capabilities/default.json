@@ -17,11 +17,7 @@
     "core:tray:default",
     "http:allow-fetch-read-body",
     "http:allow-fetch-send",
-    {
-      "identifier": "http:default",
-      "allow": [{
-        "url": "https://mst-sales-recon-api-production.*/"
-      }]
-    }
-  ]
+    "http:default"
+  ],
+  "capabilities": []
 }
