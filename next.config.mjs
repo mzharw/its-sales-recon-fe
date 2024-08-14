@@ -1,4 +1,5 @@
 const isProd = process.env.NODE_ENV === 'production';
+const isTauri = process.env.APP_PLATFORM  === 'tauri';
 const internalHost = process.env.TAURI_DEV_HOST || 'localhost';
 
 /** @type {import('next').NextConfig} */
@@ -6,7 +7,7 @@ const internalHost = process.env.TAURI_DEV_HOST || 'localhost';
 const nextConfig = {
     // Ensure Next.js uses SSG instead of SSR
     // https://nextjs.org/docs/pages/building-your-application/deploying/static-exports
-    output: 'standalone',
+    output: isTauri ? 'export' : 'standalone',
     // Note: This feature is required to use the Next.js Image component in SSG mode.
     // See https://nextjs.org/docs/messages/export-image-api for different workarounds.
     images: {
