@@ -26,7 +26,7 @@ export async function fetchWithProxy(path: string, init?: RequestInit) {
   } else {
     // For Next.js environment
     const apiUrl = process.env.NEXT_PUBLIC_API_URL || '';
-    const url = `${apiUrl}/api/proxy?path=${encodeURIComponent(path)}`;
+    const url = `${apiUrl}api/proxy?path=${encodeURIComponent(path)}`;
     return fetch(url, init);
   }
 }
