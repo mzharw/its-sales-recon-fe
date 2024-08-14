@@ -28,7 +28,7 @@ export interface DataProps {
 export function StatsGrid({ data }: { data: DataProps[] }) {
   const stats = data ? data.map((stat) => {
     const Icon = icons[stat.icon];
-    const DiffIcon = stat.diff > 0 ? IconArrowUpRight : IconArrowDownRight;
+    const DiffIcon = stat.diff >= 0 ? IconArrowUpRight : IconArrowDownRight;
 
     return (
       <Paper withBorder p="md" radius="md" key={stat.title}>
@@ -57,10 +57,12 @@ export function StatsGrid({ data }: { data: DataProps[] }) {
             readOnly
           />
 
-          <Text c={stat.diff > 0 ? 'teal' : 'red'} fz="sm" fw={500} className={classes.diff} pos={'absolute'} right={0}>
-            <span>{stat.diff}%</span>
+          <Text c={stat.diff >= 0 ? stat.diff == 0 || stat.diff == null ? 'gray' : 'teal' : 'red'} fz="sm" fw={500}
+                className={classes.diff} pos={'absolute'} right={0}>
+            <span>{stat.diff ?? 0}%</span>
             <DiffIcon size="1rem" stroke={1.5} />
           </Text>
+
         </Group>
 
         <Text fz="xs" c="dimmed" mt={7}>

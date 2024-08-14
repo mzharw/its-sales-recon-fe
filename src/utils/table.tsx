@@ -1,6 +1,7 @@
 import { Header } from '@/components/Table';
-import { toPascalCase } from '@/utils/string';
+import { isDateString, toPascalCase, withThousandSeparator } from '@/utils/string';
 import { Table } from '@mantine/core';
+import { isNumber } from 'node:util';
 
 // export function generateHeadersAlt<T extends object>(sampleObject: T): Header[] {
 //     return Object.keys(sampleObject).map((key) => ({
@@ -52,23 +53,12 @@ export function serializeData(data: string): string {
   if (isDateString(data)) {
     const date = new Date(data);
     return date.toLocaleDateString();
-  } else {
-    return data;
-  }
-}
-
-function isDateString(data: string): boolean {
-  // Regex pattern to match ISO 8601 format
-  const isoDatePattern = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z$/;
-
-  if (isoDatePattern.test(data)) {
-    const date = new Date(data);
-    return isDateValid(date);
   }
 
-  return false;
-}
+  if (!isNaN(+data)) {
+    return withThousandSeparator(data)
+  }
 
-function isDateValid(date: Date): boolean {
-  return !isNaN(date.getTime());
+  return data;
+
 }

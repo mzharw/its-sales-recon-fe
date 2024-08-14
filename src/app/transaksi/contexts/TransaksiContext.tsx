@@ -230,6 +230,7 @@ export function TransaksiProvider({ children }: { children: ReactNode }) {
     } catch (error) {
       errorHandler(error as ErrorResponse, form);
     } finally {
+      transaksiModal.close()
       setFormLoading(false);
     }
   }
