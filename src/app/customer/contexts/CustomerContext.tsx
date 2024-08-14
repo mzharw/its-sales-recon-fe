@@ -11,6 +11,7 @@ import { HeaderProps } from '@/components/Table';
 import { ErrorResponse } from '@/types';
 import { fetchBarang } from '@/app/barang/services/fetch';
 import { Barang } from '@/app/barang/contexts/BarangContext';
+import { fetchWithProxy } from '@/utils/fetch';
 
 export interface Customer {
   id?: string | null;
@@ -100,7 +101,7 @@ export function CustomerProvider({ children }: { children: ReactNode }) {
     const id = customer?.id ?? '';
 
     try {
-      const response = await fetch(`/api/proxy?path=customers/${id}`, {
+      const response = await fetchWithProxy(`customers/${id}`, {
         method: customer ? 'PATCH' : 'POST',
         body: JSON.stringify(values),
       });

@@ -14,6 +14,7 @@ import { ComboboxItem } from '@mantine/core';
 import { ErrorResponse, ModalContext } from '@/types';
 import { Barang } from '@/app/barang/contexts/BarangContext';
 import { fetchBarang } from '@/app/barang/services/fetch';
+import { fetchWithProxy } from '@/utils/fetch';
 
 export interface TransaksiDetail {
   id?: number;
@@ -214,7 +215,7 @@ export function TransaksiProvider({ children }: { children: ReactNode }) {
   async function onSubmit(values: Transaksi) {
     setFormLoading(true);
     try {
-      const response = await fetch('/api/proxy?path=sales', {
+      const response = await fetchWithProxy('sales', {
         method: 'POST',
         body: JSON.stringify(values),
       });
