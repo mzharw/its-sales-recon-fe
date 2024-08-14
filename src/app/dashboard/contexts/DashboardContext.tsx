@@ -18,6 +18,7 @@ export interface Stats {
 
 interface DashboardContextType {
   stats: DataProps[] | null;
+  loading: boolean;
 }
 
 const DashboardContext = createContext<DashboardContextType | null>(null);
@@ -56,6 +57,7 @@ export function DashboardProvider({ children }: { children: ReactNode }) {
   return (
     <DashboardContext.Provider value={{
       stats,
+      loading,
     }}>
       {children}
     </DashboardContext.Provider>

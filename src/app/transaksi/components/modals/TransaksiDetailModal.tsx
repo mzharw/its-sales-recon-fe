@@ -3,6 +3,7 @@ import { useTransaksi } from '../../contexts/TransaksiContext';
 import { Box, Modal, NumberInput, ScrollArea, Table } from '@mantine/core';
 import EmptyTable from '@/components/tables/EmptyTable';
 import { serializeData } from '@/utils/table';
+import { withThousandSeparator } from '@/utils/string';
 
 export default function TransaksiDetailModal() {
   const {
@@ -18,12 +19,12 @@ export default function TransaksiDetailModal() {
       <Table.Td>{index + 1}</Table.Td>
       <Table.Td>{barang.products?.code}</Table.Td>
       <Table.Td>{barang.products?.name}</Table.Td>
-      <Table.Td>{barang.quantity}</Table.Td>
-      <Table.Td>{barang.listPrice}</Table.Td>
-      <Table.Td>{barang.discountPercentage}</Table.Td>
-      <Table.Td>{barang.discountValue}</Table.Td>
-      <Table.Td>{barang.priceAfterDiscount}</Table.Td>
-      <Table.Td>{barang.total}</Table.Td>
+      <Table.Td>{withThousandSeparator(barang.quantity)}</Table.Td>
+      <Table.Td>{withThousandSeparator(barang.listPrice)}</Table.Td>
+      <Table.Td>{withThousandSeparator(barang.discountPercentage)}</Table.Td>
+      <Table.Td>{withThousandSeparator(barang.discountValue)}</Table.Td>
+      <Table.Td>{withThousandSeparator(barang.priceAfterDiscount)}</Table.Td>
+      <Table.Td>{withThousandSeparator(barang.total)}</Table.Td>
     </Table.Tr>
   ));
 

@@ -113,7 +113,7 @@ export default function TransaksiModal() {
 
     if (key) form.setFieldValue(key, value ? convertToNumber(value) : 0);
 
-    form.setFieldValue('totalPayment', values.subtotal - values.discount - values.shippingCost);
+    form.setFieldValue('totalPayment', values.subtotal - values.discount + values.shippingCost);
   };
 
   const removeDetail = (index: number) => {
