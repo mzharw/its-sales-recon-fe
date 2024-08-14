@@ -9,6 +9,7 @@ import { generateHeaders } from '@/utils/table';
 import { fetchBarang } from '../services/fetch';
 import { HeaderProps } from '@/components/Table';
 import { ErrorResponse } from '@/types';
+import { fetchWithProxy } from '@/utils/fetch';
 
 export interface Barang {
   id?: string | null;
@@ -97,7 +98,7 @@ export function BarangProvider({ children }: { children: ReactNode }) {
     const id = barang?.id ?? '';
 
     try {
-      const response = await fetch(`/api/proxy?path=products/${id}`, {
+      const response = await fetchWithProxy(`products/${id}`, {
         method: barang ? 'PATCH' : 'POST',
         body: JSON.stringify(values),
       });

@@ -90,7 +90,6 @@ export default function TableComponent({ data, headers, headersMap, options }: T
     [key: Keys]: any;
   }
 
-
   const cols: DataRow[] = 'items' in data ? data.items as DataRow[] : data;
   const [sortBy, setSortBy] = useState<keyof DataRow | null>(null);
   const [sortedData, setSortedData] = useState(cols);

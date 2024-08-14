@@ -29,7 +29,7 @@ async function handleRequest(req: NextRequest, method: string) {
     console.log(`Response status: ${response.status}`);
 
     const contentType = response.headers.get('content-type');
-    if (contentType && contentType.indexOf('application/json') !== -1) {
+    if (contentType && contentType.includes('application/json')) {
       const data = await response.json();
       return NextResponse.json(data, { status: response.status });
     } else {
