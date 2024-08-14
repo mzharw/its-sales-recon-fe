@@ -1,10 +1,11 @@
 import { invoke, isTauri } from '@tauri-apps/api/core';
+import { fetch as fetchTauri } from '@tauri-apps/plugin-http';
 
 export async function fetchWithProxy(path: string, init?: RequestInit) {
   if (isTauri()) {
     try {
       const method = init?.method || 'GET';
-      const body = init?.body ? JSON.stringify(init.body) : undefined;
+      const body = init?.body ? init.body : undefined;
       const apiUrl = process.env.NEXT_PUBLIC_API_URL || '';
 
       const tauriResponse = await invoke('proxy_request', {

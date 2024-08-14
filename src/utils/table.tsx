@@ -1,7 +1,6 @@
 import { Header } from '@/components/Table';
 import { isDateString, toPascalCase, withThousandSeparator } from '@/utils/string';
 import { Table } from '@mantine/core';
-import { isNumber } from 'node:util';
 
 // export function generateHeadersAlt<T extends object>(sampleObject: T): Header[] {
 //     return Object.keys(sampleObject).map((key) => ({

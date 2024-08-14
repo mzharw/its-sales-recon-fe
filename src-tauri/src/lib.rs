@@ -1,8 +1,14 @@
 use reqwest::{Client, Method};
 use tauri::command;
+use serde_json::{Value};
 
 #[command]
-async fn proxy_request(api_url: String, method: String, path: String, body: Option<String>) -> Result<String, String> {
+async fn proxy_request(
+    api_url: String,
+    method: String,
+    path: String,
+    body: Option<String>,
+) -> Result<String, String> {
     let url = format!("{}{}", api_url, path);
 
     // Convert method from String to reqwest::Method
@@ -14,7 +20,8 @@ async fn proxy_request(api_url: String, method: String, path: String, body: Opti
 
     // Add the body if it exists
     if let Some(body) = body {
-        request_builder = request_builder.body(body);
+        let parsed: Value = serde_json::from_str(&body).unwrap();
+        request_builder = request_builder.json(&parsed);
     }
 
     // Execute the request and process the response
@@ -27,6 +34,7 @@ async fn proxy_request(api_url: String, method: String, path: String, body: Opti
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
+        .plugin(tauri_plugin_http::init())
         .invoke_handler(tauri::generate_handler![proxy_request])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
